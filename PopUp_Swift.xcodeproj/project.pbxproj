@@ -14,6 +14,7 @@
 		3B1196A01C4D742C00E6B202 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B11969E1C4D742C00E6B202 /* LaunchScreen.storyboard */; };
 		3B1196AB1C4D743100E6B202 /* PopUp_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1196AA1C4D743100E6B202 /* PopUp_SwiftTests.swift */; };
 		3B1196B61C4D743100E6B202 /* PopUp_SwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1196B51C4D743100E6B202 /* PopUp_SwiftUITests.swift */; };
+		3B1196C41C4D754800E6B202 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1196C31C4D754800E6B202 /* PopUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		3B1196B11C4D743100E6B202 /* PopUp_SwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PopUp_SwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B1196B51C4D743100E6B202 /* PopUp_SwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUp_SwiftUITests.swift; sourceTree = "<group>"; };
 		3B1196B71C4D743100E6B202 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B1196C31C4D754800E6B202 /* PopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				3B1196951C4D742C00E6B202 /* AppDelegate.swift */,
 				3B1196971C4D742C00E6B202 /* ViewController.swift */,
+				3B1196C31C4D754800E6B202 /* PopUpViewController.swift */,
 				3B1196991C4D742C00E6B202 /* Main.storyboard */,
 				3B11969C1C4D742C00E6B202 /* Assets.xcassets */,
 				3B11969E1C4D742C00E6B202 /* LaunchScreen.storyboard */,
@@ -193,6 +196,7 @@
 				TargetAttributes = {
 					3B1196911C4D742C00E6B202 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 2NW94YE5N7;
 					};
 					3B1196A51C4D743100E6B202 = {
 						CreatedOnToolsVersion = 7.2;
@@ -257,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B1196981C4D742C00E6B202 /* ViewController.swift in Sources */,
+				3B1196C41C4D754800E6B202 /* PopUpViewController.swift in Sources */,
 				3B1196961C4D742C00E6B202 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -399,10 +404,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = PopUp_Swift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.devworms.PopUp-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -410,10 +419,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = PopUp_Swift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.devworms.PopUp-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
