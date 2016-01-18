@@ -20,11 +20,19 @@ class PopUpViewController: UIViewController {
         self.view.layer.cornerRadius = 5
         self.view.layer.shadowOpacity = 0.8
         self.view.layer.shadowOffset = CGSizeMake(0.0, 0.0)
+        
+        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: "panGestureHandler:")
+        self.view.addGestureRecognizer(panGestureRecognizer)
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func panGestureHandler(sender:UIPanGestureRecognizer){
+        self.removeAnimate()
     }
     
     func showInView(aView: UIView!, animated: Bool) {
