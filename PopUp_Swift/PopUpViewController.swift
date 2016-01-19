@@ -10,16 +10,19 @@ import UIKit
 
 class PopUpViewController: UIViewController {
     
-    var aView: UIView!
+    var popTransparentView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
+        //PopUp
         self.view.layer.cornerRadius = 5
         self.view.layer.shadowOpacity = 0.8
         self.view.layer.shadowOffset = CGSizeMake(0.0, 0.0)
+        self.view.layer.masksToBounds = true
+        self.view.layer.zPosition = 1;
         
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: "panGestureHandler:")
         self.view.addGestureRecognizer(panGestureRecognizer)
@@ -35,26 +38,26 @@ class PopUpViewController: UIViewController {
         self.removeAnimate()
     }
     
-    func showInView(aView: UIView!, animated: Bool) {
+    func showInView(aView: UIView!, animated: Bool, scaleX: CGFloat, scaleY: CGFloat) {
         
-        self.aView = aView
+        self.popTransparentView = UIView.init(frame:  aView.frame)
+        self.popTransparentView.backgroundColor = UIColor(white: 0.5, alpha: 0.6)
         
-        self.aView.backgroundColor = UIColor(white: 1, alpha: 0.5)
-        
-        self.aView.addSubview(self.view)
+        aView.addSubview( self.popTransparentView )
+        aView.addSubview(self.view)
         
         if animated {
             
-            self.showAnimate()
+            self.showAnimate(scaleX, sY: scaleY)
         }
     }
     
-    func showAnimate() {
+    func showAnimate(sX: CGFloat, sY: CGFloat) {
         self.view.transform = CGAffineTransformMakeScale(1.3, 1.3)
         self.view.alpha = 0.0;
         UIView.animateWithDuration(0.25, animations: {
             self.view.alpha = 1.0
-            self.view.transform = CGAffineTransformMakeScale(0.8, 0.8)
+            self.view.transform = CGAffineTransformMakeScale(sX, sY)
         });
     }
     
@@ -65,8 +68,8 @@ class PopUpViewController: UIViewController {
             }, completion:{(finished : Bool)  in
                 if (finished) {
                     
-                    self.aView.backgroundColor = UIColor(white: 1, alpha: 1)
                     self.view.removeFromSuperview()
+                    self.popTransparentView.removeFromSuperview()
                 }
         });
     }
